@@ -7,7 +7,7 @@
     <title>是你的粥蛋呀</title>
     <link
       rel="stylesheet"
-      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+      href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
   </head>
   <body>
@@ -17,6 +17,18 @@
     <img
       src="https://cdn.pixabay.com/photo/2021/01/22/09/01/unicorn-5939500_960_720.png"
     />
-    <script></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      //获取窗口长款
+      function GetViewWindowSize() {
+        return {
+          width: document.documentElement.clientWidth,
+          height: document.documentElement.clientHeight,
+        };
+      }
+
+      //监听窗口变化
+      window.onresize = (_) => GetViewWindowSize();
+    </script>
   </body>
 </html>
