@@ -15,12 +15,13 @@
         height: 100vh;
         overflow: hidden;
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       #bkc_pic {
         position: absolute;
         z-index: 1;
-        height: 100vh;
-        margin: 0 auto;
       }
       #box_root {
         position: absolute;
@@ -45,25 +46,42 @@
       id="bkc_pic"
       src="https://cdn.pixabay.com/photo/2019/12/29/02/33/snow-4726119_1280.jpg"
     />
+    <iframe
+      id="box_music"
+      frameborder="no"
+      border="0"
+      width="330"
+      height="86"
+      src="//music.163.com/outchain/player?type=2&id=1820961954&auto=1&height=66"
+    ></iframe>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
       //jq入口函数
       $(function () {
-        //获取窗口长款
-        function GetViewWindowSize() {
-          return {
-            width: document.documentElement.clientWidth,
-            height: document.documentElement.clientHeight,
-          };
+        //初始化调整窗口
+        AdjustBKC();
+        //监听窗口变化
+        window.onresize = (_) => AdjustBKC();
+        function AdjustBKC() {
+          if (
+            document.documentElement.clientWidth >
+            document.documentElement.clientHeight
+          )
+            $("#bkc_pic").css("width", "100%").css("height","");
+          else if (
+            document.documentElement.clientWidth <
+            document.documentElement.clientHeight
+          )
+            $("#bkc_pic").css("height", "100%").css("width","");
         }
 
-        //监听窗口变化
-        window.onresize = (_) => GetViewWindowSize();
+        //要干什么事情？
+        //css动画 让独角兽摇起来
 
-        $("#box_bkc").click(function () {
-          console.log();
-        });
+
+
+
       });
     </script>
   </body>
