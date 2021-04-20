@@ -5,30 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>是你的粥蛋呀</title>
+    <link rel="shortcut icon" href="favicon.svg" />
     <link
       rel="stylesheet"
       href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
+    <style>
+      body {
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+      #bkc_pic {
+        position: absolute;
+        z-index: 1;
+        height: 100vh;
+        margin: 0 auto;
+      }
+      #box_root {
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
+    <div id="box_root">
+      <img
+        src="https://cdn.pixabay.com/photo/2021/01/22/09/01/unicorn-5939500_960_720.png"
+      />
+      <div>666</div>
+    </div>
     <img
+      id="bkc_pic"
       src="https://cdn.pixabay.com/photo/2019/12/29/02/33/snow-4726119_1280.jpg"
     />
-    <img
-      src="https://cdn.pixabay.com/photo/2021/01/22/09/01/unicorn-5939500_960_720.png"
-    />
+
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-      //获取窗口长款
-      function GetViewWindowSize() {
-        return {
-          width: document.documentElement.clientWidth,
-          height: document.documentElement.clientHeight,
-        };
-      }
+      //jq入口函数
+      $(function () {
+        //获取窗口长款
+        function GetViewWindowSize() {
+          return {
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight,
+          };
+        }
 
-      //监听窗口变化
-      window.onresize = (_) => GetViewWindowSize();
+        //监听窗口变化
+        window.onresize = (_) => GetViewWindowSize();
+
+        $("#box_bkc").click(function () {
+          console.log();
+        });
+      });
     </script>
   </body>
 </html>
