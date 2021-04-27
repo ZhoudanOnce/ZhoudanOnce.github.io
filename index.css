@@ -1,0 +1,29 @@
+@import url("https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+body {
+  position: relative;
+}
+
+body > div {
+  color: red;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main_card_box {
+  background-color: white;
+  padding: 10px 40px;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#pic_unicorn {
+  width: 70vw;
+  max-width: 400px;
+}
