@@ -6,80 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>是你的粥蛋呀</title>
     <link rel="shortcut icon" href="favicon.svg" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"
-    />
-    <style>
-      body {
-        height: 100vh;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        overflow: hidden;
-        justify-content: center;
-        align-items: center;
-      }
-      #bkc_pic {
-        position: absolute;
-        z-index: 1;
-      }
-      #box_root {
-        position: absolute;
-        z-index: 10;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    </style>
+    <link rel="stylesheet" href="./index.css">
   </head>
   <body>
-    <div id="box_root">
-      <img
-        src="https://cdn.pixabay.com/photo/2021/01/22/09/01/unicorn-5939500_960_720.png"
-      />
-      <div>666</div>
+    <div>
+      <img src="https://cdn.pixabay.com/photo/2019/12/29/02/33/snow-4726119_1280.jpg"/>
     </div>
-    <img
-      id="bkc_pic"
-      src="https://cdn.pixabay.com/photo/2019/12/29/02/33/snow-4726119_1280.jpg"
-    />
-    <iframe
-      id="box_music"
-      frameborder="no"
-      border="0"
-      width="330"
-      height="86"
-      src="//music.163.com/outchain/player?type=2&id=1820961954&auto=1&height=66"
-    ></iframe>
-
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-      //jq入口函数
-      $(function () {
-        //初始化调整窗口
-        AdjustBKC();
-        //监听窗口变化
-        window.onresize = (_) => AdjustBKC();
-        function AdjustBKC() {
-          if (
-            document.documentElement.clientWidth >
-            document.documentElement.clientHeight
-          )
-            $("#bkc_pic").css("width", "100vw").css("height","");
-          else if (
-            document.documentElement.clientWidth <
-            document.documentElement.clientHeight
-          )
-            $("#bkc_pic").css("height", "100vh").css("width","");
-        }
-
-        //要干什么事情？
-        //css动画 让独角兽摇起来
-      });
-    </script>
+    <div>
+        <div id="main_card_box" class="animate__animated animate__zoomInDown">
+          <img id="pic_unicorn" src="https://cdn.pixabay.com/photo/2021/01/22/09/01/unicorn-5939500_960_720.png">
+          <h3 style="text-align: center;">谢谢你这么好看，还跑来看我的首页</h3>
+        </div>
+    </div>
   </body>
 </html>
